@@ -4,16 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a1bc8826-7791-4f34-9582-03914a693cbf" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Esercitazione_n1.1_5AI.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Atleta.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/GaraAtletica.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/GestoreAtleti.java" afterDir="false" />
+    <list default="true" id="a1bc8826-7791-4f34-9582-03914a693cbf" name="Changes" comment="Primo commit">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Atleta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Atleta.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,6 +23,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Erchask&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Erchask/GaraAtletica.git&quot;,
+    &quot;accountId&quot;: &quot;c84c7962-37dc-430d-9393-fb78a3bbb7e2&quot;
+  }
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
 }</component>
@@ -73,6 +78,30 @@
       <option name="presentableId" value="Default" />
       <updated>1761215165919</updated>
     </task>
+    <task id="LOCAL-00001" summary="Primo commit">
+      <option name="closed" value="true" />
+      <created>1761218819506</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1761218819506</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Primo commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Primo commit" />
   </component>
 </project>

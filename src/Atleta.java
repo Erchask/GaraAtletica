@@ -1,36 +1,39 @@
 import java.util.Random;
-public class Atleta implements Runnable{
-String nome;
-int numero;
-double tempo=0;
-double metri=0;
-final double LUNGHEZZAGARA=400;
-final Random rand = new Random();
 
 
-public Atleta(String nome,int numero){
-    this.nome=nome;
-    this.numero=numero;
+public class Atleta implements Runnable {
+    int numero;
+    String nome;
+    double tempo = (double)0.0F;
+    double metri = (double)0.0F;
+    final double LUNGHEZZAGARA = (double)50.0F;
 
 
-}
-public void comunica(){
-    System.out.println("sono l'atleta "+ nome);
-}
-@Override
-public void run(){
-    while(metri<LUNGHEZZAGARA){
-        metri+=rand.nextDouble(5, 17);
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-        System.out.println("metri percorsi:"+metri);
+    public Atleta(int pNumero, String pNome) {
+        this.numero = pNumero;
+        this.nome = pNome;
     }
-    System.out.println(nome+ "è arrivato");
 
 
+    public void run() {
+        Random metriPercorsi = new Random();
+
+
+        while(this.metri <= (double)50.0F) {
+            this.metri += metriPercorsi.nextDouble((double)10.0F);
+            System.out.println(this.nome + " Metri Percorsi: " + this.metri);
+
+
+            try {
+                Thread.currentThread();
+                Thread.sleep(1000L);
+            } catch (InterruptedException var3) {
+                System.err.println("Errore sleep");
+            }
+        }
+
+
+        System.out.println(this.nome + " è al Traguardo");
+    }
 }
 
-}
