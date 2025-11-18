@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 public class GaraAtletica {
     public static void main(String[] args) {
         Atleta a1 = new Atleta(1, "Francesco");

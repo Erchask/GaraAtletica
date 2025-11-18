@@ -1,11 +1,16 @@
 import java.util.ArrayList;
 public class Giudice extends Thread{
-   static ArrayList<Atleta> Atleti=new ArrayList<>();
+
+    static ArrayList<Atleta> Atleti=new ArrayList<>();
     static ArrayList<Atleta> Podio=new ArrayList<>();
    static ArrayList<Thread> threadAtleti=new ArrayList<>();
+   private static final double LUNGHEZZAGARA = 50;
 
    public Giudice(){
 
+   }
+   public static double getLUNGHEZZAGARA(){
+       return LUNGHEZZAGARA;
    }
    public static void aggiungimi (Atleta a){
        Atleti.add(a);
@@ -25,7 +30,7 @@ public class Giudice extends Thread{
             threadAtleti.getLast().start();
         }
     }
-    public static void finito(Atleta a){
+    public static synchronized void finito(Atleta a){
        Podio.add(a);
        if(Podio.size()==Atleti.size())
            Giudice.fineGara();

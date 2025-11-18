@@ -6,7 +6,8 @@ public class Atleta implements Runnable {
     String nome;
     double tempo = 0;
     double metri = 0;
-    final double LUNGHEZZAGARA = 50;
+
+
 
 
     public Atleta(int cNumero, String cNome) {
@@ -20,7 +21,7 @@ public class Atleta implements Runnable {
         Random metriPercorsi = new Random();
 
 
-        while(this.metri <= 50) {
+        while(this.metri <= Giudice.getLUNGHEZZAGARA()) {
             this.metri += metriPercorsi.nextDouble((double)10);
             System.out.println(this.nome + " Metri Percorsi: " + this.metri);
 

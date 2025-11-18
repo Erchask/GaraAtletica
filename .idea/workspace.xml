@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a1bc8826-7791-4f34-9582-03914a693cbf" name="Changes" comment="Primo commit">
+    <list default="true" id="a1bc8826-7791-4f34-9582-03914a693cbf" name="Changes" comment="commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Atleta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Atleta.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GaraAtletica.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GaraAtletica.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GestoreAtleti.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Giudice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Giudice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Giudice.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,12 +30,12 @@
     &quot;assignee&quot;: &quot;Erchask&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/Erchask/GaraAtletica.git&quot;,
-    &quot;accountId&quot;: &quot;c84c7962-37dc-430d-9393-fb78a3bbb7e2&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/Erchask/GaraAtletica.git",
+    "accountId": "48df02d8-cc47-42fb-8db6-8790ebddea8b"
   }
-}</component>
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
 }</component>
@@ -97,7 +96,15 @@
       <option name="project" value="LOCAL" />
       <updated>1761657303312</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="commit">
+      <option name="closed" value="true" />
+      <created>1762432023570</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1762432023570</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -113,6 +120,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Primo commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Primo commit" />
+    <MESSAGE value="commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit" />
   </component>
 </project>
