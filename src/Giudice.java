@@ -1,21 +1,24 @@
 import java.util.ArrayList;
+import java.io.*;
 public class Giudice extends Thread{
 
-    static ArrayList<Atleta> Atleti=new ArrayList<>();
-    static ArrayList<Atleta> Podio=new ArrayList<>();
-   static ArrayList<Thread> threadAtleti=new ArrayList<>();
-   private static final double LUNGHEZZAGARA = 50;
+     ArrayList<Atleta> Atleti=new ArrayList<>();
+     ArrayList<Atleta> Podio=new ArrayList<>();
+     ArrayList<Thread> threadAtleti=new ArrayList<>();
+    private  final double LUNGHEZZAGARA = 50;
+    GestoreFile gf= new GestoreFile();
 
-   public Giudice(){
 
-   }
-   public static double getLUNGHEZZAGARA(){
-       return LUNGHEZZAGARA;
-   }
-   public static void aggiungimi (Atleta a){
-       Atleti.add(a);
-   }
-    public static void inizio() {
+    public Giudice(){
+
+    }
+    public  double getLUNGHEZZAGARA(){
+        return LUNGHEZZAGARA;
+    }
+    public  void aggiungimi (Atleta a){
+        Atleti.add(a);
+    }
+    public  void inizio() {
         for (int i = 3; i > 0; --i) {
             System.out.println("Inizio in:" + i);
             try {
@@ -30,16 +33,20 @@ public class Giudice extends Thread{
             threadAtleti.getLast().start();
         }
     }
-    public static synchronized void finito(Atleta a){
-       Podio.add(a);
-       if(Podio.size()==Atleti.size())
-           Giudice.fineGara();
+    public synchronized void finito(Atleta a){
+        Podio.add(a);
+        if(Podio.size()==Atleti.size())
+            fineGara();
     }
-    public static void fineGara(){
-       System.out.println("gara terminata");
-       System.out.println("primo in classifica "+ Podio.get(0).nome);
-       System.out.println("secondo in classifica "+ Podio.get(1).nome);
-       System.out.println("terzo in classifica "+ Podio.get(2).nome);
+    public void fineGara(){
+        StringBuilder sb = new StringBuilder();
+        sb.append("gara terminata\n");
+        sb.append("primo in classifica: ").append(Podio.get(0).nome).append("\n");
+        sb.append("secondo in classifica: ").append(Podio.get(1).nome);
+        sb.append("secondo in classifica ").append(Podio.get(1).nome);
+        System.out.println(sb.toString());
+        gf.scriviFile(sb.toString());
+
     }
 
 }

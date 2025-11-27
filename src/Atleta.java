@@ -6,14 +6,15 @@ public class Atleta implements Runnable {
     String nome;
     double tempo = 0;
     double metri = 0;
+    Giudice g;
 
 
 
 
-    public Atleta(int cNumero, String cNome) {
+    public Atleta(int cNumero, String cNome,Giudice g) {
         this.numero = cNumero;
         this.nome = cNome;
-        Giudice.aggiungimi(this);
+        this.g=g;
     }
 
 
@@ -21,9 +22,9 @@ public class Atleta implements Runnable {
         Random metriPercorsi = new Random();
 
 
-        while(this.metri <= Giudice.getLUNGHEZZAGARA()) {
+        while(this.metri <= g.getLUNGHEZZAGARA()) {
             this.metri += metriPercorsi.nextDouble((double)10);
-            System.out.println(this.nome + " Metri Percorsi: " + this.metri);
+            System.out.printf(this.nome + " Metri Percorsi: %.2f\n",this.metri);
 
 
             try {
@@ -35,7 +36,6 @@ public class Atleta implements Runnable {
         }
 
 
-      Giudice.finito(this);
+        g.finito(this);
     }
 }
-
