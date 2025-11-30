@@ -1,41 +1,85 @@
 import java.util.Random;
 
-
 public class Atleta implements Runnable {
-    int numero;
+    Giudice giudice;  
+
     String nome;
-    double tempo = 0;
-    double metri = 0;
-    Giudice g;
+    int numero;
+    double tempo;
+    double metri;
+    boolean bevutoSospetto;
+    boolean scivolato;
+    boolean distratto;
+    boolean arrivato;
+    public final Random rand = new Random();
 
 
-
-
-    public Atleta(int cNumero, String cNome,Giudice g) {
-        this.numero = cNumero;
-        this.nome = cNome;
-        this.g=g;
+    public Atleta(String nome, int numero, Giudice giudice) {
+        this.giudice = giudice;
+        this.nome = nome;
+        this.numero = numero;
+        this.metri = 0;
+        this.tempo = 0;
+        this.arrivato = false;
+        this.bevutoSospetto = rand.nextDouble(100) < 20;
+        this.scivolato = false;
+        this.distratto = false;
     }
 
-
+    @Override
     public void run() {
-        Random metriPercorsi = new Random();
+        double LUNGHEZZA_GARA = giudice.getLUNGHEZZAGARA();
+        double tempoDistratto = 0;
 
+        while (metri <= LUNGHEZZA_GARA) {
 
-        while(this.metri <= g.getLUNGHEZZAGARA()) {
-            this.metri += metriPercorsi.nextDouble((double)10);
-            System.out.printf(this.nome + " Metri Percorsi: %.2f\n",this.metri);
+            // Possibile scivolata
+            if (!scivolato && rand.nextInt(100) < 25) {
+                scivolato = true;
+                System.out.println(nome + " è scivolato! Rimane fermo per 1 secondo...");
+            }
 
+            // Possibile distrazione
+            if (!scivolato && !distratto && rand.nextInt(100) < 25) {
+                System.out.println(nome + " si è distratto! Rallenta per 2 secondi...");
+                distratto = true;
+                tempoDistratto = tempo;
+            }
+
+            // Fine distrazione dopo 2 secondi
+            if (distratto && (tempo - tempoDistratto) >= 2) {
+                distratto = false;
+                System.out.println(nome + " ha ripreso la concentrazione");
+            }
+
+            // Movimento
+            if (!scivolato) {
+                if (distratto) {
+                    metri += rand.nextDouble(3, 5);
+                } else if (bevutoSospetto) {
+                    metri += rand.nextDouble(7, 10);
+                } else {
+                    metri += rand.nextDouble(5, 8);
+                }
+                System.out.printf("%s - Metri percorsi: %.2f\n", nome, metri);
+            } else {
+                System.out.printf("%s resta fermo per la scivolata\n", nome);
+            }
 
             try {
-                Thread.currentThread();
                 Thread.sleep(1000);
-            } catch (InterruptedException var3) {
-                System.err.println("Errore sleep");
+            } catch (InterruptedException e) {
+                e.printStackTrace();
             }
+
+            tempo += 1;
+
+            // La scivolata dura un solo ciclo (1 secondo)
+            if (scivolato) scivolato = false;
         }
 
-
-        g.finito(this);
+        arrivato = true;
+        System.out.printf("%s ha terminato la gara!\n", nome);
+        giudice.finito(this);
     }
 }
