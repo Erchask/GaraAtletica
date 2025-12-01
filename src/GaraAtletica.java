@@ -1,6 +1,11 @@
 import java.util.Scanner;
 
+/**
+ * Classe principale che gestisce l'interazione con l'utente e la registrazione della gara.
+ */
 public class GaraAtletica {
+
+   
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
@@ -16,7 +21,6 @@ public class GaraAtletica {
             lunghezzaGara = scanner.nextInt();
         }
 
-        
         Giudice g = new Giudice(lunghezzaGara);
 
         scanner.nextLine(); 
